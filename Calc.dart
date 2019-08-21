@@ -156,7 +156,7 @@ void main()
   
   else if(choice =='9')
   {
-    print("Digite um número em binário:");
+    print("Type a binary number:");
     String bin = stdin.readLineSync();
     int result = bin_to_dec(bin);
     print("${result}");
