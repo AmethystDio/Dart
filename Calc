@@ -32,10 +32,20 @@ List<double> bhaskara(double x, double y, double z)
   return List<double>.from([x1, x2]);
 }
 
+  //REVERSE STRING
+  String reverse_string(String string){
+  String temp = "";
+    
+  for (int i = string.length-1; i > -1; i--){
+    temp += string[i];
+  }
+  return temp;
+}
+
 void main()
 {
 
-  print('Choose your operation: \n1. For sum \n2. For subtraction \n3. For division \n4. For multiplication \n5. For percentage \n6. For squared root \n7. For factorial \n8. For Bhaskaras Function');
+  print('Choose your operation: \n1. For sum \n2. For subtraction \n3. For division \n4. For multiplication \n5. For percentage \n6. For squared root \n7. For factorial \n8. For Bhaskaras Function \n9. For Binary -> Decimal Convertion');
   String choice = stdin.readLineSync();
 
   if(choice == "1")
@@ -134,5 +144,18 @@ void main()
     print("${result}");
     }
   }
-
+  
+  else if(choice =='9')
+  {
+    int bin_to_dec(String string)
+    {
+    
+      String order = reverse_string(string);
+      int dec = 0;
+      
+      for (int i = 0; i < order.length; i++){
+      dec += int.parse(order[i])*pow(2, i);
+    }
+      return dec;
+   }
 }
